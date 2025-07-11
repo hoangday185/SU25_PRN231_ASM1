@@ -34,12 +34,23 @@ namespace QuitSmoking.API.HoangNV.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromBody] PlanQuitMethodHoangNv plan)
+        public async Task<IActionResult> Create([FromBody] PlanQuitMethodHoangNvCreateDto dto)
         {
-            if (plan == null)
+            if (dto == null)
             {
                 return BadRequest("Model is null");
             }
+            var plan = new PlanQuitMethodHoangNv
+            {
+                CreatePlanQuitSmokingHoangNvid = dto.CreatePlanQuitSmokingHoangNvid,
+                QuitMethodHoangNvid = dto.QuitMethodHoangNvid,
+                StartDate = dto.StartDate,
+                EndDate = dto.EndDate,
+                IsSuccessful = dto.IsSuccessful,
+                UserRating = dto.UserRating,
+                UserNotes = dto.UserNotes,
+                CreationDateTime = DateTime.Now
+            };
             var result = await _planQuitMethodService.CreatePlanAsync(plan);
             if (result > 0)
             {
@@ -49,12 +60,23 @@ namespace QuitSmoking.API.HoangNV.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(int id, [FromBody] PlanQuitMethodHoangNv plan)
+        public async Task<IActionResult> Update(int id, [FromBody] PlanQuitMethodHoangNvUpdateDto dto)
         {
-            if (plan == null || plan.PlanQuitMethodHoangNvid != id)
+            if (dto == null || dto.PlanQuitMethodHoangNvid != id)
             {
                 return BadRequest("Model is null or ID mismatch");
             }
+            var plan = new PlanQuitMethodHoangNv
+            {
+                PlanQuitMethodHoangNvid = dto.PlanQuitMethodHoangNvid,
+                CreatePlanQuitSmokingHoangNvid = dto.CreatePlanQuitSmokingHoangNvid,
+                QuitMethodHoangNvid = dto.QuitMethodHoangNvid,
+                StartDate = dto.StartDate,
+                EndDate = dto.EndDate,
+                IsSuccessful = dto.IsSuccessful,
+                UserRating = dto.UserRating,
+                UserNotes = dto.UserNotes
+            };
             var result = await _planQuitMethodService.UpdatePlanAsync(plan);
             if (result > 0)
             {

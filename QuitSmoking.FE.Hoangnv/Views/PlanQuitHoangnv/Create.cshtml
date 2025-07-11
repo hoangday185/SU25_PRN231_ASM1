@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Create";
+    var planId = ViewBag.PlanId;
 }
 
 <h1>Create</h1>
@@ -13,27 +14,24 @@
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="CreatePlanQuitSmokingHoangNvid" class="control-label"></label>
-                <select asp-for="CreatePlanQuitSmokingHoangNvid" class ="form-control" asp-items="ViewBag.CreatePlanQuitSmokingHoangNvid"></select>
+                
+               <input type="hidden" name="CreatePlanQuitSmokingHoangNvid" value="@ViewBag.PlanId" />
             </div>
-            <div class="form-group">
-                <label asp-for="QuitMethodHoangNvid" class="control-label"></label>
-                <select asp-for="QuitMethodHoangNvid" class ="form-control" asp-items="ViewBag.QuitMethodHoangNvid"></select>
-            </div>
+           
             <div class="form-group">
                 <label asp-for="StartDate" class="control-label"></label>
-                <input asp-for="StartDate" class="form-control" />
+                <input asp-for="StartDate" type="date" class="form-control" />
                 <span asp-validation-for="StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="EndDate" class="control-label"></label>
-                <input asp-for="EndDate" class="form-control" />
+                <input asp-for="EndDate"  type="date" class="form-control" />
                 <span asp-validation-for="EndDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IsSuccessful" class="control-label"></label>
-                <input asp-for=IsSuccessful" class="form-control" />
-                <span asp-validation-for="IsSuccessful" class="text-danger"></span>
+              
+                <input asp-for=IsSuccessful type="hidden" value="false" class="form-control" />
+            
             </div>
             <div class="form-group">
                 <label asp-for="UserRating" class="control-label"></label>

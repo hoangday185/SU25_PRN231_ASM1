@@ -12,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddScoped<ICreatePlanQuitSmokingHoangNvService, CreatePlanQuitSmokingHoangNvService>();
 builder.Services.AddScoped<IPlanQuitHoangNVService, PlanQuitHoangnvService> ();
+builder.Services.AddScoped<IQuitMethodHoangnvService, QuitMethodHoangnvService>();
 builder.Services.AddScoped<UserService>();
 
 builder.Services.AddControllers().AddJsonOptions(options =>

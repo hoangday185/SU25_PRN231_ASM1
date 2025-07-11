@@ -1,13 +1,12 @@
 ﻿@page
-@model QuitSmoking.FE.Hoangnv.Views.PlanQuitMethodHoangnv.DeleteModel
+@model QuitSmoking.FE.Hoangnv.Views.PlanQuitMethodHoangnv.DetailsModel
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Details";
 }
 
-<h1>Delete</h1>
+<h1>Details</h1>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>PlanQuitMethodHoangNv</h4>
     <hr />
@@ -61,10 +60,8 @@
             @Html.DisplayFor(model => model.PlanQuitMethodHoangNv.QuitMethodHoangNv.MethodDescription)
         </dd>
     </dl>
-    
-    <form method="post">
-        <input type="hidden" asp-for="PlanQuitMethodHoangNv.PlanQuitMethodHoangNvid" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-page="./Index">Back to List</a>
-    </form>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PlanQuitMethodHoangNv.PlanQuitMethodHoangNvid">Edit</a> |
+    <a asp-action="Index">Back to List</a>
 </div>

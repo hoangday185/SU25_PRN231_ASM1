@@ -1,0 +1,91 @@
+﻿@using QuitSmoking.Repositories.HoangNV.Models;
+@using QuitSmoking.Repositories.HoangNV.ModelExtentions;
+@model PaginationResult<QuitMethodHoangNv>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].MethodName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].MethodDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].EffectivenessRating)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].DifficultyLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].RecommendedDuration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].RequiresMedical)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].RequiresCounseling)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].IsPopular)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].CreationDateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Items[0].IsActive)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Items) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MethodName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MethodDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EffectivenessRating)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DifficultyLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecommendedDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequiresMedical)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequiresCounseling)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsPopular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.QuitMethodHoangNvid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.QuitMethodHoangNvid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.QuitMethodHoangNvid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

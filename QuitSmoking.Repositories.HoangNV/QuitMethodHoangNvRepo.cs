@@ -12,5 +12,7 @@ namespace QuitSmoking.Repositories.Hoangnv
     {
         public QuitMethodHoangNvRepo() => _context ??= new Su25Prn231Se1723G5Context();
         public QuitMethodHoangNvRepo(Su25Prn231Se1723G5Context context) => _context = context;
+
+        public IQueryable<QuitMethodHoangNv> GetQueryable() => _context.QuitMethodHoangNvs.AsQueryable();
     }
 }

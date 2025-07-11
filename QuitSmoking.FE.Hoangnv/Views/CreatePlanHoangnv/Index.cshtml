@@ -10,6 +10,7 @@
 
 <p>
     <a asp-action="Create">Create New</a>
+    <a asp-action="Index" asp-controller="QuitMethodHoangnv">Quit method</a>
 </p>
 @{
     var isActive = Context.Request.Query["isActive"].ToString();
@@ -47,7 +48,7 @@
             <td>@Html.DisplayFor(modelItem => item.IsActive)</td>
            
             <td>
-                    <a asp-action="Index" asp-controller="PlanQuitMethodHoangnv" class="btn btn-outline-primary" asp-route-id="@item.CreatePlanQuitSmokingHoangNvid">Details Method</a> |
+                   <a asp-action="Index" asp-controller="PlanQuitHoangnv" asp-route-id="@item.CreatePlanQuitSmokingHoangNvid">Details Method</a> |
                 <a asp-action="Edit" class="btn btn-outline-primary" asp-route-id="@item.CreatePlanQuitSmokingHoangNvid">Edit</a>
                 <a asp-action="Detail" class="btn btn-info ml-1" asp-route-id="@item.CreatePlanQuitSmokingHoangNvid">Detail</a>
                 @if (item.IsActive == true)

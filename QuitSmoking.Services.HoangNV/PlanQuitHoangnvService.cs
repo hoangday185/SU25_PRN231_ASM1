@@ -13,6 +13,8 @@ namespace QuitSmoking.Services.HoangNV
     public class PlanQuitHoangnvService : IPlanQuitHoangNVService
     {
         private readonly PlanQuitMethodHoangNvRepo _planQuitRepo;
+
+        public PlanQuitHoangnvService() => _planQuitRepo ??= new PlanQuitMethodHoangNvRepo();
         public async Task<int> CreatePlanAsync(PlanQuitMethodHoangNv plan)
         {
             return await _planQuitRepo.CreateAsync(plan);
@@ -47,6 +49,18 @@ namespace QuitSmoking.Services.HoangNV
         public async Task<PaginationResult<PlanQuitMethodHoangNv>> GetPaginatedPlansAsync(int page = 1, int pageSize = 10, int? createPlanId = null, string? search = null)
         {
             var query =  _planQuitRepo.GetQueryable();
+
+            if(query == null)
+            {
+                return new PaginationResult<PlanQuitMethodHoangNv>
+                {
+                    TotalItems = 0,
+                    TotalPages = 0,
+                    CurrentPage = 1,
+                    PageSize = 0,
+                    Items = new List<PlanQuitMethodHoangNv>()
+                };
+            }
 
             if (createPlanId.HasValue)
             {

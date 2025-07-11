@@ -70,7 +70,7 @@ namespace QuitSmoking.FE.Hoangnv.Controllers
                 Console.WriteLine(ex);
             }
 
-            HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             ModelState.AddModelError("", "Login failure");
             return View();
         }
