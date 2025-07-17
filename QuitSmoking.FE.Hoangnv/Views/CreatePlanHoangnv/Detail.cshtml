@@ -1,0 +1,40 @@
+@model QuitSmoking.Repositories.HoangNV.Models.CreatePlanQuitSmokingHoangNv
+@{
+    ViewData["Title"] = "Plan Detail";
+}
+<h2>Plan Detail</h2>
+<div class="card">
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Plan Title</dt>
+            <dd class="col-sm-9">@Model.PlanTitle</dd>
+
+            <dt class="col-sm-3">Start Date</dt>
+            <dd class="col-sm-9">@Model.StartDate.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-3">Target End Date</dt>
+            <dd class="col-sm-9">@Model.TargetEndDate.ToString("yyyy-MM-dd")</dd>
+
+            <dt class="col-sm-3">Current Smoking Frequency</dt>
+            <dd class="col-sm-9">@Model.CurrentSmokingFrequency</dd>
+
+            <dt class="col-sm-3">Daily Reduction Goal</dt>
+            <dd class="col-sm-9">@Model.DailyReductionGoal</dd>
+
+            <dt class="col-sm-3">Motivation Reason</dt>
+            <dd class="col-sm-9">@Model.MotivationReason</dd>
+
+            <dt class="col-sm-3">Selected Approach</dt>
+            <dd class="col-sm-9">@Model.SelectedApproach</dd>
+
+            <dt class="col-sm-3">Is Active</dt>
+            <dd class="col-sm-9">@(Model.IsActive == true ? "Active" : "Inactive")</dd>
+
+            <dt class="col-sm-3">Creation Date</dt>
+            <dd class="col-sm-9">@Model.CreationDateTime?.ToString("yyyy-MM-dd HH:mm")</dd>
+
+          
+        </dl>
+        <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+    </div>
+</div> 

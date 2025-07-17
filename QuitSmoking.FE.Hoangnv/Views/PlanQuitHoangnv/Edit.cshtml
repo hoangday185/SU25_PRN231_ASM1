@@ -1,0 +1,70 @@
+﻿@page
+@model QuitSmoking.FE.Hoangnv.Views.PlanQuitMethodHoangnv.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>PlanQuitMethodHoangNv</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PlanQuitMethodHoangNv.PlanQuitMethodHoangNvid" />
+            <div class="form-group">
+                <label asp-for="PlanQuitMethodHoangNv.CreatePlanQuitSmokingHoangNvid" class="control-label"></label>
+                <select asp-for="PlanQuitMethodHoangNv.CreatePlanQuitSmokingHoangNvid" class="form-control" asp-items="ViewBag.CreatePlanQuitSmokingHoangNvid"></select>
+                <span asp-validation-for="PlanQuitMethodHoangNv.CreatePlanQuitSmokingHoangNvid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlanQuitMethodHoangNv.QuitMethodHoangNvid" class="control-label"></label>
+                <select asp-for="PlanQuitMethodHoangNv.QuitMethodHoangNvid" class="form-control" asp-items="ViewBag.QuitMethodHoangNvid"></select>
+                <span asp-validation-for="PlanQuitMethodHoangNv.QuitMethodHoangNvid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlanQuitMethodHoangNv.StartDate" class="control-label"></label>
+                <input asp-for="PlanQuitMethodHoangNv.StartDate" class="form-control" />
+                <span asp-validation-for="PlanQuitMethodHoangNv.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlanQuitMethodHoangNv.EndDate" class="control-label"></label>
+                <input asp-for="PlanQuitMethodHoangNv.EndDate" class="form-control" />
+                <span asp-validation-for="PlanQuitMethodHoangNv.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlanQuitMethodHoangNv.IsSuccessful" class="control-label"></label>
+                <input asp-for="PlanQuitMethodHoangNv.IsSuccessful" class="form-control" />
+                <span asp-validation-for="PlanQuitMethodHoangNv.IsSuccessful" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlanQuitMethodHoangNv.UserRating" class="control-label"></label>
+                <input asp-for="PlanQuitMethodHoangNv.UserRating" class="form-control" />
+                <span asp-validation-for="PlanQuitMethodHoangNv.UserRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlanQuitMethodHoangNv.UserNotes" class="control-label"></label>
+                <input asp-for="PlanQuitMethodHoangNv.UserNotes" class="form-control" />
+                <span asp-validation-for="PlanQuitMethodHoangNv.UserNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PlanQuitMethodHoangNv.CreationDateTime" class="control-label"></label>
+                <input asp-for="PlanQuitMethodHoangNv.CreationDateTime" class="form-control" />
+                <span asp-validation-for="PlanQuitMethodHoangNv.CreationDateTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

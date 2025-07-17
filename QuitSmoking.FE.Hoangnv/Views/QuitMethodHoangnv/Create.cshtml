@@ -1,0 +1,52 @@
+﻿
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>QuitMethodHoangNv</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="form-create">
+            <div class="form-group">
+                <label for="MethodName" class="control-label">Method Name</label>
+                <input required id="MethodName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="MethodDescription" class="control-label">Method Description</label>
+                <input required id="MethodDescription" class="form-control" />
+                
+            </div>
+            <div class="form-group">
+                <label for="EffectivenessRating" class="control-label">Effectiveness Rating</label>
+                <input required id="EffectivenessRating" class="form-control" />
+                
+            </div>
+            <div class="form-group">
+                <label for="DifficultyLevel" class="control-label">Difficulty Level</label>
+                <input required id="DifficultyLevel" class="form-control" />
+               
+            </div>
+            <div class="form-group">
+                <label for="RecommendedDuration" class="control-label">Recommended Duration</label>
+                <input required id="RecommendedDuration" class="form-control" />
+                
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+        <div id="result-message" class="mt-2"></div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/create.js"></script>

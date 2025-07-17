@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>QuitMethodHoangNv</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form>
+            
+            <input type="hidden" id="QuitMethodHoangNvid" />
+            <div class="form-group">
+                <label for="MethodName" class="control-label">Method Name</label>
+                <input id="MethodName" class="form-control" />
+               
+            </div>
+            <div class="form-group">
+                <label for="MethodDescription" class="control-label">Method Description</label>
+                <input id="MethodDescription" class="form-control" />
+                
+            </div>
+            <div class="form-group">
+                <label for="EffectivenessRating" class="control-label">Effectiveness Rating</label>
+                <input id="EffectivenessRating" class="form-control" />
+                
+            </div>
+            <div class="form-group">
+                <label for="DifficultyLevel" class="control-label">Difficulty Level</label>
+                <input id="DifficultyLevel" class="form-control" />
+         
+            </div>
+            <div class="form-group">
+                <label for="RecommendedDuration" class="control-label">Recommended Duration</label>
+                <input id="RecommendedDuration" class="form-control" />
+             
+            </div>
+            <div class="form-group">
+                <label for="RequiresMedical" class="control-label">Requires Medical</label>
+                <input id="RequiresMedical" class="form-control" />
+            
+            </div>
+            <div class="form-group">
+                <label for="RequiresCounseling" class="control-label">Requires Counseling</label>
+                <input id="RequiresCounseling" class="form-control" />
+              
+            </div>
+            <div class="form-group">
+                <label for="IsPopular" class="control-label">Is Popular</label>
+                <input id="IsPopular" class="form-control" />
+               
+            </div>
+            <div class="form-group">
+                <label for="CreationDateTime" class="control-label">CreationDate Time</label>
+                <input id="CreationDateTime" readonly class="form-control" />
+              
+            </div>
+            <div class="form-group">
+                <label for="IsActive" class="control-label">Is Active</label>
+                <input id="IsActive" class="form-control" />
+              
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+
+        <div id="result-message" class="my-2"></div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/edit.js"></script>
+
